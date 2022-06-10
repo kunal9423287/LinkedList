@@ -15,7 +15,7 @@ public class LinkedList {
 			this.next = null;
 		 }
 	   }
-	 public void insert (int data)
+	   public  Node insert (int data)
 	 {
 		Node newNode = new Node(data);
 		if (head == null)
@@ -31,7 +31,10 @@ public class LinkedList {
 			}
 			  temp.next = newNode;
 		}
+		   return newNode;
 	 }
+	   
+	   
 	 public void print() 
 	  {
 		 Node temp = head;
