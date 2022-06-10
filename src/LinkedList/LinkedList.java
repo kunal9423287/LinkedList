@@ -45,21 +45,28 @@ public class LinkedList {
 		  }
 				System.out.println();
 			}
-	 public void add(int data) {
-		 Node newNode = new Node(data);
-		 newNode.next = head;
-		 head = newNode;
+	 public void insertAfter(Node prevNode, int value)
+	 {
+	    if (prevNode == null)
+	 	{
+	 		System.out.println("Previous Node should not be NULL");
+	 		return;
+	 	}
+	 			
+	 	 Node newNode = new Node(value);
+	 	 newNode.next = prevNode.next;
+	 	 prevNode.next = newNode;
+
 	 }
-
-	public void printf()
-	{
-		Node temp = head;
-		while(temp!=null) 
-		{
-			System.out.print(temp.data+"->");
-			temp = temp.next;
-		}
-		System.out.println();
-	}
-	}
-
+	 public int pop()
+	 {
+	 	int popData = 0;
+	 	if (head == null) 
+	 	{
+	 	System.out.println("Stack Over Flow");
+	 	}
+	 	popData = head.data;
+	 	head = head.next;
+	 	return popData;
+	 	}
+	 }
